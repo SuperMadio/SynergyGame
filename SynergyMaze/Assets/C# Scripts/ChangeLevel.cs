@@ -11,7 +11,7 @@ public class ChangeLevel : MonoBehaviour {
         if(other.gameObject.name == "Player")
         {
             Debug.Log("its colliding! ");
-            SceneManager.LoadScene("Level_Two");
+            SceneManager.LoadScene("Winning Screen");
         }
 
     }
