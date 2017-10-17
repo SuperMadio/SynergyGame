@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour {
 
     public void changeToScene(int toScene)
     {
-
         SceneManager.LoadScene(toScene);
     }
 }
