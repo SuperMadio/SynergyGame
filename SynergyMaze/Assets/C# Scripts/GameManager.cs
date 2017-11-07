@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public Image image;
+    public int lvl;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,18 +17,28 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 
         Destroy(image,1);
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
 	}
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Player")
         {
-            SceneManager.LoadScene("Winning Screen");
+            SceneManager.LoadScene(lvl);
         }
     }
 
     public void changeToScene(int toScene)
     {
         SceneManager.LoadScene(toScene);
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
     }
 }
